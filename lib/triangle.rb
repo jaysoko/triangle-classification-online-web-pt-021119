@@ -11,17 +11,13 @@ end
 def kind
 case @sides.uniq.size
     when 1
-  	kind = :equilateral
+  	:equilateral
     when 2
-  	kind = :isosceles
+  	:isosceles
     else
-  	kind = :scalene
+  	:scalene
     end
-   kind
 end
-
-
-
 
 class TriangleError < StandardError
 end
