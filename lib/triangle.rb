@@ -14,6 +14,10 @@ if @sides.any? {|x| x <=0 || x <= 0.0}
    raise TriangleError
 end
 
+if @a + @b <= @c || @a + @c <= @b
+   raise TriangleError
+end
+
 
 case @sides.uniq.size
     when 1
