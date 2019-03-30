@@ -2,13 +2,19 @@ class Triangle
 attr_accessor :a, :b, :c
 
 def initialize(a,b,c)
-@sides = [a,b,c]
+@sides = [a,b,c].sort
 @a = a
 @b = b
 @c = c
 end
 
 def kind
+
+if @sides.any? {|x| x <=0 || x <= 0.0}
+   raise TriangleError
+end
+
+
 case @sides.uniq.size
     when 1
   	:equilateral
