@@ -14,7 +14,7 @@ if @sides.any? {|x| x <=0 || x <= 0.0}
    raise TriangleError
 end
 
-if @a + @b <= @c || @a + @c <= @b
+if @a + @b <= @c || @a + @c <= @b || @b + @c <= @a
    raise TriangleError
 end
 
